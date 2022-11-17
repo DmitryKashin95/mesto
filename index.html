@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="pages/index.css" rel="stylesheet">
+  <title>Место</title>
+</head>
+<body class="page">
+  <header class="header">
+    <img class="header__logo" src="images/mesto.svg" alt="Место логотип">
+  </header>
+  <main class="content">
+    <section class="profile">
+      <img class="profile__avatar" src="images/custo.jpg" alt="фото профиля">
+      <div class="profile__info">
+        <h2 class="profile__name">Жак-Ив Кусто</h2>
+        <h3 class="profile__profession">Исследователь океана</h3>
+        <div class="profile__button-edit button-hover"></div>
+      </div>
+      <button class="profile__button-add button-hover"></button>
+    </section>
+    <section class="cards">
+      <div class="card">
+        <img class="card__image" src="images/kirov.jpg" alt="Киров">
+        <div class="card__place-like">
+          <h2 class="card__place">Киров</h2>
+          <button class="card__like"></button>
+        </div>
+      </div>
+      <div class="card">
+        <img class="card__image" src="images/slobodskoy.jpg" alt="Слободской">
+        <div class="card__place-like">
+          <h2 class="card__place">Слободской</h2>
+          <button class="card__like"></button>
+        </div>
+      </div>
+      <div class="card">
+        <img class="card__image" src="images/nn.jpg" alt="Нижний Новгород">
+        <div class="card__place-like">
+          <h2 class="card__place">Нижний Новгород</h2>
+          <button class="card__like"></button>
+        </div>
+      </div>
+      <div class="card">
+        <img class="card__image" src="images/sergiev-posad.jpg" alt="Сергиев Посад">
+        <div class="card__place-like">
+          <h2 class="card__place">Сергиев Посад</h2>
+          <button class="card__like"></button>
+        </div>
+      </div>
+      <div class="card">
+        <img class="card__image" src="images/kazan.jpg" alt="Казань">
+        <div class="card__place-like">
+          <h2 class="card__place">Казань</h2>
+          <button class="card__like"></button>
+        </div>
+      </div>
+      <div class="card">
+        <img class="card__image" src="images/spb.jpg" alt="Санкт-Петербург">
+        <div class="card__place-like">
+          <h2 class="card__place">Санкт-Петербург</h2>
+          <button class="card__like"></button>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <p class="footer__copyright">© 2020 Mesto Russia</p>
+  </footer>
+  <div class="popup">
+    <div class="popup__container">
+      <h2 class="popup__title">Редактировать профиль</h2>
+      <input class="popup__input" id="name" type="text" placeholder="Имя" name="name" required="" autocomplete="off">
+      <input class="popup__input" id="prof" type="text" placeholder="Профессия" name="prof" required="" autocomplete="off">
+      <button class="popup__button-save" type="submit" aria-label="Сохранить">Сохранить</button>
+      <button class="popup__button-close button-hover" type="popup__button-close" aria-label="Закрыть"></button>
+    </div>
+  </div>
+  <script src="./scripts/script.js" defer=""></script>
+</body>
+</html>

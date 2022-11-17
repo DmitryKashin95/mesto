@@ -1,0 +1,5 @@
+.card__place-like {
+  margin: 25px 30px 32px 21px;
+  display: flex;
+  justify-content: space-between;
+}

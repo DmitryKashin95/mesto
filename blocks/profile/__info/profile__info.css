@@ -1,0 +1,8 @@
+.profile__info {
+  display: grid;
+  grid-template-areas:
+    'name btn-edit'
+    'prof prof';
+  gap: 8px 18px;
+  align-items: baseline;
+}
