@@ -5,6 +5,7 @@
   box-sizing: border-box;
   align-self: center;
   background-size: cover;
+  background-repeat: no-repeat;
   border-style: none;
   background-color: transparent;
   border-width: initial;
