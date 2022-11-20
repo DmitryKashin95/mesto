@@ -4,3 +4,17 @@
   grid-template-rows: repeat(auto-fit, minmax(213px, 1fr));
   gap: 17px 20px;
 }
+
+@media screen and (max-width: 890px) {
+  .cards {
+    margin: 0 auto;
+    justify-items: center;
+    max-width: 690px;
+  }
+}
+
+@media screen and (max-width: 590px) {
+  .cards {
+    max-width: 500px;
+  }
+}

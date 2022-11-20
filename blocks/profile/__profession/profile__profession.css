@@ -1,5 +1,6 @@
 .profile__profession {
   margin: 0;
+  max-width: 335px;
   grid-area: prof;
   font-weight: 400;
   font-size: 18px;

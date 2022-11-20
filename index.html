@@ -14,55 +14,55 @@
     <section class="profile">
       <img class="profile__avatar" src="images/custo.jpg" alt="фото профиля">
       <div class="profile__info">
-        <h2 class="profile__name">Жак-Ив Кусто</h2>
-        <h3 class="profile__profession">Исследователь океана</h3>
-        <div class="profile__button-edit button-hover"></div>
+        <h1 class="profile__name">Жак-Ив Кусто</h2>
+        <h2 class="profile__profession">Исследователь океана</h3>
+        <button class="profile__button-edit button-hover" type="button"></button>
       </div>
       <button class="profile__button-add button-hover" type="button"></button>
     </section>
     <section class="cards">
-      <div class="card">
+      <article class="card">
         <img class="card__image" src="images/kirov.jpg" alt="Киров">
         <div class="card__place-like">
           <h2 class="card__place">Киров</h2>
-          <button class="card__like"></button>
+          <button class="card__like" type="button"></button>
         </div>
-      </div>
-      <div class="card">
+      </article>
+      <article class="card">
         <img class="card__image" src="images/slobodskoy.jpg" alt="Слободской">
         <div class="card__place-like">
           <h2 class="card__place">Слободской</h2>
-          <button class="card__like"></button>
+          <button class="card__like" type="button"></button>
         </div>
-      </div>
-      <div class="card">
+      </article>
+      <article class="card">
         <img class="card__image" src="images/nn.jpg" alt="Нижний Новгород">
         <div class="card__place-like">
           <h2 class="card__place">Нижний Новгород</h2>
-          <button class="card__like"></button>
+          <button class="card__like" type="button"></button>
         </div>
-      </div>
-      <div class="card">
+      </article>
+      <article class="card">
         <img class="card__image" src="images/sergiev-posad.jpg" alt="Сергиев Посад">
         <div class="card__place-like">
           <h2 class="card__place">Сергиев Посад</h2>
-          <button class="card__like"></button>
+          <button class="card__like" type="button"></button>
         </div>
-      </div>
-      <div class="card">
+      </article>
+      <article class="card">
         <img class="card__image" src="images/kazan.jpg" alt="Казань">
         <div class="card__place-like">
           <h2 class="card__place">Казань</h2>
-          <button class="card__like"></button>
+          <button class="card__like" type="button"></button>
         </div>
-      </div>
-      <div class="card">
+      </article>
+      <article class="card">
         <img class="card__image" src="images/spb.jpg" alt="Санкт-Петербург">
         <div class="card__place-like">
           <h2 class="card__place">Санкт-Петербург</h2>
-          <button class="card__like"></button>
+          <button class="card__like" type="button"></button>
         </div>
-      </div>
+      </article>
     </section>
   </main>
   <footer class="footer">
@@ -71,12 +71,14 @@
   <div class="popup">
     <div class="popup__container">
       <h2 class="popup__title">Редактировать профиль</h2>
-      <input class="popup__input" id="name" type="text" placeholder="Имя" name="name" required="" autocomplete="off">
-      <input class="popup__input" id="prof" type="text" placeholder="Профессия" name="prof" required="" autocomplete="off">
-      <button class="popup__button-save" type="submit" aria-label="Сохранить">Сохранить</button>
-      <button class="popup__button-close button-hover" type="button" aria-label="Закрыть"></button>
+      <form class="popup__form" name="profile-edit">
+        <input class="popup__input popup__input_js_name" id="name" type="text" placeholder="Имя" name="name" required="" autocomplete="off">
+        <input class="popup__input popup__input_js_prof" id="prof" type="text" placeholder="Профессия" name="prof" required="" autocomplete="off">
+        <button class="popup__button-save" type="submit" aria-label="Сохранить">Сохранить</button>
+        <button class="popup__button-close button-hover" type="button" aria-label="Закрыть"></button>
+      </form>
     </div>
   </div>
-  <script src="./scripts/script.js" defer=""></script>
+  <script src="./scripts/index.js" defer=""></script>
 </body>
 </html>
