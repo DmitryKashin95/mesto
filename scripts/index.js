@@ -1,16 +1,16 @@
 const popup = document.querySelector('.popup');
 const closeButton = document.querySelectorAll('.popup__button-close');
-const saveButton = popup.querySelector('.popup__form');
-const saveCardButton = popup.querySelector('.popup__form');
+const saveButton = popup.querySelector('#popup__form_edit');
+const saveCardButton = popup.querySelector('#popup__form_add');
 const popupEdit = document.querySelector('.popup__edit-profile');
 const popupAdd = document.querySelector('.popup__add-card');
-
-const addCardName = popupAdd.querySelector('.popup__input_card-name')
-const addCardLink = popupAdd.querySelector('.popup__input_card-link')
+const popupImgOpen = document.querySelector('.popup__img-open')
 
 const popupContainer = popup.querySelector('.popup__container');
 const popupName = popupContainer.querySelector('.popup__input_js_name');
 const popupProf = popupContainer.querySelector('.popup__input_js_prof');
+const addCardName = popupContainer.querySelector('.popup__input_card-name')
+const addCardLink = popupContainer.querySelector('.popup__input_card-link')
 
 const profileInfo = document.querySelector('.profile__info');
 const editButton = profileInfo.querySelector('.profile__button-edit');
@@ -19,6 +19,8 @@ const profileProfession = document.querySelector('.profile__profession');
 const addButton = document.querySelector('.profile__button-add');
 const cardsElement = document.querySelector('.cards')
 const likeActive = document.querySelectorAll('.card__like');
+const popupImg = document.querySelector('.popup__img');
+const popupImgTitle = document.querySelector('.popup__img-title');
 
 function inputInfo() {
   popupName.value = profileName.textContent;
@@ -41,7 +43,7 @@ function changeInfo(evt) {
   removeClass(evt);
 };
 
-function createPlace(cardInfo) {
+function createCard(cardInfo) {
   const cardTemplate = document.querySelector('#newCard');
   const cardElement = cardTemplate.querySelector('.card').cloneNode(true);
 
@@ -55,9 +57,8 @@ function createPlace(cardInfo) {
   return cardElement;
 };
 
-function addCard(cardInfo) {
-  const cardElement = createPlace(cardInfo);
-  cardsElement.prepend(cardElement);
+function addCards(cardInfo) {
+  cardsElement.prepend(createCard(cardInfo));
 };
 
 function toogleLike(evt) {
@@ -68,10 +69,56 @@ function addCard(evt) {
   evt.preventDefault();
   const cardName = addCardName.value;
   const cardLink = addCardLink.value;
-  const newPlace = {name: cardName, link: cardLink};
-  createPlace(newPlace);
-  removeClass();
+  const newCard = { name: cardName, link: cardLink };
+  addCards(newCard);
+  removeClass(popupAdd);
 };
+
+function deleteCard (evt) {
+  evt.target.closest('.card').remove();
+}
+
+function imgData(evt) {
+  popupImg.src = evt.target.src;
+  popupImgTitle.textContent = evt.currentTarget.querySelector('.card__place').textContent;
+};
+
+function imagePopup(event) {
+  if (event.target.classList.contains('card__image')) {
+    imgData(evt);
+    openPopup(popupImgOpen);
+  }
+};
+
+
+const initialCards = [
+  {
+    name: 'Киров',
+    link: './images/kirov.jpg'
+  },
+  {
+    name: 'Слободской',
+    link: './images/slobodskoy.jpg'
+  },
+  {
+    name: 'Нижний Новгород',
+    link: './images/nn.jpg'
+  },
+  {
+    name: 'Сергиев Посад',
+    link: './images/sergiev-posad.jpg'
+  },
+  {
+    name: 'Казань',
+    link: './images/kazan.jpg'
+  },
+  {
+    name: 'Санкт-Петербург',
+    link: './images/spb.jpg'
+  }
+];
+
+initialCards.forEach(elem => addCards(elem));
 
 editButton.addEventListener('click', function () {
   addClass(popupEdit);
