@@ -60,7 +60,6 @@ function imagePopup (evt) {
 };
 
 function createCard(link, name) {
-  console.log(cardTemplate);
   const cardElement = cardTemplate.querySelector('.card').cloneNode(true);
   cardElement.querySelector('.card__image').src = link;
   cardElement.querySelector('.card__image').alt = name;
