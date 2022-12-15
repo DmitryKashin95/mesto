@@ -92,6 +92,7 @@ buttonOpenEditProfilePopup.addEventListener('click', function () {
   openPopup(popupEditProfile);
   inputInfo()
 });
+
 buttonOpenAddCardPopup.addEventListener('click', function () {
   openPopup(popupAddCard);
 });
@@ -102,5 +103,7 @@ closeButtons.forEach(function(elem) {
     closePopup(closePopups);
   });
 });
+
 formEditProfile.addEventListener('submit', changeInfo);
+
 formAddCard.addEventListener('submit', addCard);
