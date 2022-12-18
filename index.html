@@ -29,9 +29,11 @@
   <div class="popup popup_edit-profile">
     <div class="popup__container">
       <h2 class="popup__title">Редактировать профиль</h2>
-      <form class="popup__form" name="profile-edit" id="popup__form_edit">
-        <input class="popup__input popup__input_js_name" id="name" type="text" placeholder="Имя" name="name" required="" autocomplete="off">
-        <input class="popup__input popup__input_js_prof" id="prof" type="text" placeholder="Профессия" name="prof" required="" autocomplete="off">
+      <form class="popup__form" name="profile-edit" id="popup__form_edit" novalidate>
+        <input class="popup__input popup__input_js_name" id="name" type="text" minlength="2" maxlength="40" placeholder="Имя" name="name" required autocomplete="off">
+        <span id="name-error" class="popup__error"></span>
+        <input class="popup__input popup__input_js_prof" id="prof" type="text" minlength="2" maxlength="200" placeholder="Профессия" name="prof" required autocomplete="off">
+        <span id="prof-error" class="popup__error"></span>
         <button class="popup__button-save" type="submit" aria-label="Сохранить">Сохранить</button>
       </form>
       <button class="popup__button-close button-hover" type="button" aria-label="Закрыть"></button>
@@ -40,9 +42,11 @@
   <div class="popup popup_add-card">
     <div class="popup__container">
       <h2 class="popup__title">Новое место</h2>
-      <form class="popup__form" name="place-add" id="popup__form_add">
-        <input class="popup__input popup__input_card-name" id="place" type="text" placeholder="Название" name="name" required="" autocomplete="off">
-        <input class="popup__input popup__input_card-link" id="link" type="text" placeholder="Ссылка на картинку" name="prof" required="" autocomplete="off">
+      <form class="popup__form" name="place-add" id="popup__form_add" novalidate>
+        <input class="popup__input popup__input_card-name" id="place" type="text" minlength="2" maxlength="30" placeholder="Название" name="name" required autocomplete="off">
+        <span id="place-error" class="popup__error"></span>
+        <input class="popup__input popup__input_card-link" id="link" type="url" placeholder="Ссылка на картинку" name="prof" required autocomplete="off">
+        <span id="link-error" class="popup__error"></span>
         <button class="popup__button-save" type="submit" aria-label="Сохранить">Сохранить</button>
       </form>
       <button class="popup__button-close button-hover" type="button" aria-label="Закрыть"></button>
@@ -67,5 +71,6 @@
   </template>
   <script defer src="./scripts/index.js"></script>
   <script src="./scripts/constants.js"></script>
+  <script src="./scripts/validate.js"></script>
 </body>
 </html>

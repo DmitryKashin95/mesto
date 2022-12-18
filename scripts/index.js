@@ -31,10 +31,24 @@ function inputInfo() {
 
 function openPopup(popup) {
   popup.classList.add('popup_opened');
+  document.addEventListener('keyup', closePopupEsc);
 };
 
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
+  document.addEventListener('keyup', closePopupEsc);
+};
+
+function closePopupEsc(event) {
+  if (event.key === 'Escape') {
+    closePopup(document.querySelector('.popup_opened'));
+  }
+};
+
+function closePopupOverlay(event) {
+  if (event.target.classList.contains('popup_opened')) {
+    closePopup(event.target);
+  }
 };
 
 function toogleLike(evt) {
@@ -103,6 +117,8 @@ closeButtons.forEach(function(elem) {
     closePopup(closePopups);
   });
 });
+
+document.querySelectorAll('.popup').forEach(elem => elem.addEventListener('click', closePopupOverlay));
 
 formEditProfile.addEventListener('submit', changeInfo);
 
