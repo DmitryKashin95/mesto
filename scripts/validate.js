@@ -47,6 +47,11 @@ const enableValidation = (cfg) => {
       evt.preventDefault();
     })
     toggleButtonDisable(allSelector, buttonSave, cfg);
+    form.addEventListener('reset', () => {
+      setTimeout( () => {
+        toggleButtonDisable(allSelector, buttonSave, cfg);
+      }, 0);
+    });
     allSelector.forEach((inp) => {
       const error = document.querySelector(`#${inp.id}-error`);
       inp.addEventListener('input', () => {

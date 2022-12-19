@@ -31,12 +31,12 @@ function inputInfo() {
 
 function openPopup(popup) {
   popup.classList.add('popup_opened');
-  document.addEventListener('keyup', closePopupEsc);
+  document.addEventListener('keydown', closePopupEsc);
 };
 
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
-  document.addEventListener('mousedown', closePopupEsc);
+  document.removeEventListener('keydown', closePopupEsc);
 };
 
 function closePopupEsc(event) {
@@ -104,11 +104,12 @@ addCards(initialCards);
 
 buttonOpenEditProfilePopup.addEventListener('click', function () {
   openPopup(popupEditProfile);
-  inputInfo()
+  inputInfo();
 });
 
 buttonOpenAddCardPopup.addEventListener('click', function () {
   openPopup(popupAddCard);
+
 });
 
 closeButtons.forEach(function(elem) {
