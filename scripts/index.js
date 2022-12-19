@@ -36,7 +36,7 @@ function openPopup(popup) {
 
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
-  document.addEventListener('keyup', closePopupEsc);
+  document.addEventListener('mousedown', closePopupEsc);
 };
 
 function closePopupEsc(event) {
@@ -113,12 +113,12 @@ buttonOpenAddCardPopup.addEventListener('click', function () {
 
 closeButtons.forEach(function(elem) {
   const closePopups = elem.closest('.popup');
-  elem.addEventListener('click', function() {
+  elem.addEventListener('mousedown', function() {
     closePopup(closePopups);
   });
 });
 
-document.querySelectorAll('.popup').forEach(elem => elem.addEventListener('click', closePopupOverlay));
+document.querySelectorAll('.popup').forEach(elem => elem.addEventListener('mousedown', closePopupOverlay));
 
 formEditProfile.addEventListener('submit', changeInfo);
 
